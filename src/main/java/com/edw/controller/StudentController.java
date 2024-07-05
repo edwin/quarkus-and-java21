@@ -2,8 +2,6 @@ package com.edw.controller;
 
 import com.edw.model.StudentModel;
 import com.edw.repository.StudentRepository;
-import io.quarkus.panache.common.Page;
-import io.quarkus.panache.common.Sort;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
