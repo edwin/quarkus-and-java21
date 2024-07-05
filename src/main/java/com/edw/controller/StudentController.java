@@ -32,8 +32,8 @@ public class StudentController {
     @GET
     @Path("/students")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllStudents(@QueryParam("page") Integer page) {
-        LOG.debug(String.format("get all students"));
+    public Response getAllStudents(@DefaultValue("0") @QueryParam("page") Integer page) {
+        LOG.debugf("get all students");
         return Response.ok(new HashMap(){{
                     put("result", studentRepository.findAll(page));
                 }})
@@ -46,7 +46,7 @@ public class StudentController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createStudent(StudentModel studentModel) {
-        LOG.debug(String.format("creating student"));
+        LOG.debugf("creating student %s", studentModel.getName());
         studentRepository.persist(studentModel);
         return Response.status(Response.Status.CREATED)
                 .entity(new HashMap(){{
