@@ -45,3 +45,9 @@ $ curl -kv -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cac
 * Connection #0 to host localhost left intact
 {"result":{"id":1,"name":"edwin"}}          
 ```
+
+## Image Vulnerabilities
+At the current time (05 July 2024) this image gives no CRITICAL nor HIGH vulnerabilities. Scan is done by using Aquasecurity Trivy 
+```
+Total: 62 (UNKNOWN: 0, LOW: 40, MEDIUM: 22, HIGH: 0, CRITICAL: 0)
+```
