@@ -2,6 +2,12 @@
 
 How to run Quarkus in Java 21 with Shenandoah GC. 
 
+## Images
+Providing two different dockerfiles ( `Dockerfile` and `minimal.Dockerfile` ), with each having a different base image.
+
+## Image Difference
+The difference is only in `minimal.Dockerfile` we do manual package installation using `microdnf` which shows a great flexibility when extending the base image.
+
 ## How to Test
 
 ```
@@ -47,7 +53,7 @@ $ curl -kv -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cac
 ```
 
 ## Image Vulnerabilities
-At the current time (05 July 2024) this image gives no CRITICAL nor HIGH vulnerabilities. Scan is done by using Aquasecurity Trivy 
+At the current time (05 July 2024), both `ubi9/openjdk-21-runtime:1.20` and `ubi9/ubi-minimal:9.4` images gives no CRITICAL nor HIGH vulnerabilities. Scan is done by using Aquasecurity Trivy 
 ```
 Total: 62 (UNKNOWN: 0, LOW: 40, MEDIUM: 22, HIGH: 0, CRITICAL: 0)
 ```
