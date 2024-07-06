@@ -6,7 +6,7 @@ LABEL JAVA_VERSION="21"
 ENV LANGUAGE='en_US:en'
 ENV TZ='Asia/Jakarta'
 
-RUN microdnf install --nodocs java-21-openjdk-headless  \
+RUN microdnf install -y --nodocs java-21-openjdk-headless  \
     && microdnf clean all  \
     && echo "securerandom.source=file:/dev/urandom" >> /etc/alternatives/jre/lib/security/java.security
 
@@ -22,4 +22,4 @@ ENV JAVA_OPTS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss
 EXPOSE 8080
 USER 185
 
-CMD ["java", "$JAVA_OPTS -jar", "application.jar"]
+CMD java $JAVA_OPTS -jar application.jar
