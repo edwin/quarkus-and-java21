@@ -57,3 +57,8 @@ At the current time (05 July 2024), both `ubi9/openjdk-21-runtime:1.20` and `ubi
 ```
 Total: 62 (UNKNOWN: 0, LOW: 40, MEDIUM: 22, HIGH: 0, CRITICAL: 0)
 ```
+
+## Blog Post
+```
+https://edwin.baculsoft.com/2024/07/creating-java-21-runtime-on-top-of-an-ubi-base-image/
+```
