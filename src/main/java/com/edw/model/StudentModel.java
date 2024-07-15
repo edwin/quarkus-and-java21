@@ -11,7 +11,8 @@ import jakarta.persistence.*;
  * @author Muhammad Edwin < edwin at redhat dot com >
  * 05 Jul 2024 15:40
  */
-@Entity(name="T_STUDENT")
+@Entity
+@Table(name="T_STUDENT")
 public class StudentModel extends PanacheEntityBase {
 
     @Id

@@ -38,6 +38,17 @@ public class StudentController {
                 .build();
     }
 
+    @GET
+    @Path("/students/{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllStudentsWithName(String name) {
+        LOG.debugf("get all students with name {}", name);
+        return Response.ok(new HashMap(){{
+                    put("result", studentRepository.findByName(name));
+                }})
+                .build();
+    }
+
 
     @POST
     @Path("/students")
