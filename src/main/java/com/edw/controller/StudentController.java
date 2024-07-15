@@ -42,7 +42,7 @@ public class StudentController {
     @Path("/students/{name}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllStudentsWithName(@PathParam("name") String name) {
-        LOG.debugf("get all students with name {}", name);
+        LOG.debugf("get all students with name %s", name);
         return Response.ok(new HashMap(){{
                     put("result", studentRepository.findByName(name));
                 }})
