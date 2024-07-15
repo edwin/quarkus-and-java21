@@ -33,4 +33,9 @@ public class StudentRepository implements PanacheRepositoryBase<StudentModel, Lo
         return query.stream().toList();
     }
 
+    public List<String> findByNameFromId(Long id) {
+        PanacheQuery<String> query = StudentModel.find("select name  from StudentModel sm where id = ?1", id).project(String.class);
+        return query.stream().toList();
+    }
+
 }

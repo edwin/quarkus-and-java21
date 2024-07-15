@@ -39,12 +39,23 @@ public class StudentController {
     }
 
     @GET
-    @Path("/students/{name}")
+    @Path("/students/name/{name}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllStudentsWithName(@PathParam("name") String name) {
         LOG.debugf("get all students with name %s", name);
         return Response.ok(new HashMap(){{
                     put("result", studentRepository.findByName(name));
+                }})
+                .build();
+    }
+
+    @GET
+    @Path("/students/id/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllStudentsWithId(@PathParam("id") Long id) {
+        LOG.debugf("get all students with id %s", id);
+        return Response.ok(new HashMap(){{
+                    put("result", studentRepository.findByNameFromId(id));
                 }})
                 .build();
     }
