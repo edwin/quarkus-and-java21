@@ -52,6 +52,42 @@ $ curl -kv -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cac
 {"result":{"id":1,"name":"edwin"}}          
 ```
 
+```
+$ curl -kv http://localhost:8080/api/students/name/e
+*   Trying [::1]:8080...
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080
+> GET /api/students/name/e HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/8.4.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Content-Type: application/json;charset=UTF-8
+< content-length: 36
+<
+* Connection #0 to host localhost left intact
+{"result":[{"id":1,"name":"pepe8"}]}            
+```
+
+```
+$ curl -kv http://localhost:8080/api/students/id/2
+*   Trying [::1]:8080...
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080
+> GET /api/students/id/2 HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/8.4.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Content-Type: application/json;charset=UTF-8
+< content-length: 19
+<
+* Connection #0 to host localhost left intact
+{"result":["lala"]}
+```
+
 ## Image Vulnerabilities
 At the current time (05 July 2024), both `ubi9/openjdk-21-runtime:1.20` and `ubi9/ubi-minimal:9.4` images gives no CRITICAL nor HIGH vulnerabilities. Scan is done by using Aquasecurity Trivy 
 ```
