@@ -89,7 +89,7 @@ $ curl -kv http://localhost:8080/api/students/id/2
 ```
 
 ## Image Vulnerabilities
-At the current time (05 July 2024), both `ubi9/openjdk-21-runtime:1.20` and `ubi9/ubi-minimal:9.4` images gives no CRITICAL nor HIGH vulnerabilities. Scan is done by using Aquasecurity Trivy 
+At the current time (05 July 2024), both `ubi9/openjdk-21-runtime:1.20` and `ubi9/ubi-minimal:9.4` images gives no `CRITICAL` nor `HIGH` vulnerabilities. Scan is done by using `Aquasecurity Trivy` 
 ```
 Total: 62 (UNKNOWN: 0, LOW: 40, MEDIUM: 22, HIGH: 0, CRITICAL: 0)
 ```
